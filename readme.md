@@ -13,11 +13,23 @@ Requirements
 ---
 
 TODO
-##
-* Find out why the minimap tool only renders actors in the middle of the map and fix it
-* Test non square maps
-* Better json exporting - printing in console now
+###
 
+Major
+##
+* Fix flag zone rendring
+* Find out why the minimap tool only renders actors in the middle of the map and fix it
+* Better json exporting - printing in console now
+* Map border export + rendering
+* Support more gamemodes (Only AAS tested)
+
+Minor
+##
+* Test non square maps (probably all minimaps are square but not sure)
+* Custom minimap rendering bluprint
+   * Connect both blueprints into a single tool
+* Fully automate everything
+* Finish documentation
 ---
 Workflow
 1. Open up SDK, and open up a layer (_don't open master layer unless you know how to add lighting_) you want to render (_first time it will take a very long time_).
