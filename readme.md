@@ -58,6 +58,8 @@ Major
 
 Minor
 ##
+* Change material of fields when rendring
+* Vehicle spawns
 * GUI tool
 * Multithreading
 * Test non square maps (probably all minimaps are square but not sure)

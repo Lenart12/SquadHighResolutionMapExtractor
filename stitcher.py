@@ -24,7 +24,7 @@ DRAW_BORDER = True
 
 
 # Master folder which contains layer folders with images of layers and flag json
-IMG_DIR = ''
+IMG_DIR = 'C:\\Users\\Lenart\\Documents\\MEGA\\Code\\SquadMinimaps'
 # Folder which contains flag images and roboto default font
 RESOURCES_DIR = 'resources'
 
@@ -55,7 +55,7 @@ def centered_text(draw, font, text, x, y):
     size = draw.textsize(text, font, stroke_width=5)
     n_x = x - size[0]/2
     n_y = y - size[1]/2
-    draw.text((n_x + 3, n_y + 3), font=font, text=text, fill=(0, 0, 0), stroke_fill=(0, 0, 0), stroke_width=1)
+    draw.text((n_x + 5, n_y + 5), font=font, text=text, fill=(0, 0, 0), stroke_fill=(0, 0, 0), stroke_width=5)
     draw.text((n_x, n_y), font=font, text=text, fill=(255, 255, 255))
 
 def main():
@@ -67,7 +67,7 @@ def main():
         for y in range(TILES):
             file_name = f'{MAP_LAYER}_Minimap-{TILES-x-1}_{TILES-y-1}.TGA'
             print(f'Stitching {file_name}')
-            path = f'{IMG_DIR}\\{MAP_LAYER}\\{file_name}'
+            path = f'{IMG_DIR }\\{MAP_LAYER}\\{file_name}'
             tile = Image.open(path)
 
             minimap.paste(tile, [RES * x, RES * y])
@@ -134,7 +134,7 @@ def main():
 
     if DRAW_FLAG:
         # Create font object
-        font = ImageFont.truetype(f'{RESOURCES_DIR}\\Roboto-Regular.ttf', size=72)
+        font = ImageFont.truetype(f'{RESOURCES_DIR}\\Roboto-Regular.ttf', size=169)
 
         # Load team flags
         team_flags = [
@@ -177,7 +177,7 @@ def main():
                  int(y - team_flags[int(flag['initial_team'])].size[1]/2))
             )
             # Draw objective name
-            centered_text(draw, font, flag['display_name'], x, y - 150)
+            centered_text(draw, font, flag['display_name'], x, y - 200)
 
         print('Compositing objectives to image')
 
